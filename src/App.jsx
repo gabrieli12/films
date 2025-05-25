@@ -63,7 +63,7 @@ function App() {
 
   return (
     <>
-      <header className="flex justify-around">
+      <header className="flex justify-around p-2">
         <div className="flex gap-10 max-sm:flex-col max-sm:gap-5">
           <h1 className="text-3xl">MyFilms</h1>
 
@@ -85,9 +85,9 @@ function App() {
       <aside
         className={`${
           favIsOpen ? "visible" : "hidden"
-        } h-full w-100   bg-amber-100 fixed right-0 max-sm:w-full max-sm:mt-3 p-2`}
+        } h-full w-100   bg-amber-100 fixed right-0 max-sm:w-full max-sm:mt-3 p-2  z-50`}
       >
-        <ul>
+        <ul className="flex flex-col gap-3">
           {favData.map((item, index) => {
             return (
               <li key={index} className="flex gap-2  items-center">
@@ -100,12 +100,26 @@ function App() {
       </aside>
 
       <main>
-        <section className="grid grid-cols-4 p-11 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
+
+          <section className="w-full h-screen mt-5 relative flex justify-center items-center ">
+            <img className="absolute top-0 brightness-50 h-screen w-full object-cover " src="https://daily.kellogg.edu/wp-content/uploads/2018/08/film-interpretation.jpg" alt="" />
+            <h2 className="text-7xl text-white z-10 relative tracking-wide text-center max-sm:text-5xl">Welcome our Film industry</h2>
+
+          </section>
+
+
+
+
+
+
+
+
+        <section className="grid grid-cols-4 p-11 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 mt-20">
           {data.map((item, index) => {
             return (
               <div className="p-4" id={item.id} key={index}>
                 <h2>{item.title}</h2>
-                <img
+                <img 
                   id={item.id}
                   className="w-56"
                   src={item.img}
@@ -126,7 +140,7 @@ function App() {
         </section>
 
         <section
-          className={`absolute w-full h-full  top-0  ${
+          className={`fixed z-50 w-full h-full  top-0  ${
             isOptionOpne ? "visible" : "hidden"
           }   `}
         >
@@ -154,7 +168,7 @@ function App() {
             </div>
           </div>
           <i
-            className="fa-solid fa-xmark absolute top-[20px] right-[20px] text-3xl cursor-pointer max-lg:text-white"
+            className="fa-solid fa-xmark absolute top-[20px] right-[20px] text-3xl cursor-pointer text-white"
             onClick={() => {
               setIsOptionOpne(false);
               console.log(isOptionOpne);
@@ -162,6 +176,14 @@ function App() {
           ></i>
         </section>
       </main>
+
+
+
+      <footer className="w-full h-64 bg-black flex items-center p-6 text-white flex-col gap-4">
+            <h2 className="text-3xl">MyFilms</h2>
+            <p>ფილმები</p>
+            <p>email@gmail.com</p>
+      </footer>
     </>
   );
 }
