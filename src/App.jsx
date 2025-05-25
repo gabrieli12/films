@@ -140,17 +140,17 @@ function App() {
         </section>
 
         <section
-          className={`fixed z-50 w-full h-full  top-0  ${
+          className={`fixed  overflow-y-auto   z-50 w-full h-screen  top-0  ${
             isOptionOpne ? "visible" : "hidden"
-          }   `}
+          }    `}
         >
-          <div className="flex max-lg:flex-col ">
+          <div className=" flex max-lg:flex-col ">
             <img
               className="h-screen max-lg:w-full object-cover"
               src={currentOption.img}
               alt=""
             />
-            <div className="p-5 pt-20 text-white bg-[#0000007a]  backdrop-blur-sm">
+            <div className="p-5 pt-20 text-white bg-[#00000094]  backdrop-blur-md">
               <h2 className="text-5xl">{currentOption.title} <span className="text-sm">year: <b>{currentOption.year}</b></span></h2>
               <p className="mt-3">{currentOption.desc}</p>
               <p className="mt-10">
